@@ -7,11 +7,19 @@ const todoList =[{
     name:'Code',
     dueDate:'2023-16-7'
  }];
+/* The `renderTodoList()` function is responsible for rendering the todo list on the webpage. It
+iterates over the `todoList` array and creates HTML elements for each todo item. It then updates the
+HTML content of the element with the class `js-todo-list` with the generated HTML code.
+Additionally, it adds a delete button for each todo item, which when clicked, removes the
+corresponding item from the `todoList` array and re-renders the todo list. */
+
 function renderTodoList() {
 
 
 let todoListHTML='';
-
+/* The code block is a part of the `renderTodoList()` function. It is responsible for iterating over
+the `todoList` array and generating HTML code for each todo item. */
+    
 for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i];
     const {name, dueDate} = todoObject;
@@ -32,6 +40,13 @@ for (let i = 0; i < todoList.length; i++) {
 
 document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
+
+/* The `addTodo()` function is responsible for adding new items to the `todoList` array. It retrieves
+the input values for the name and due date from the respective input elements on the page. It then
+creates a new object with the name and due date values and pushes it to the `todoList` array.
+Finally, it clears the input fields and calls the `renderTodoList()` function to update the
+displayed todo list. */
+
 function addTodo() {
 const inputElement=	document.querySelector('.input');
 const name = inputElement.value 
