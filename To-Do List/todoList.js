@@ -1,3 +1,8 @@
+/**
+ * The code defines a todoList array and two functions, renderTodoList and addTodo, to render the todo
+ * list and add new items to it respectively.
+ */
+
 const todoList =[{
     name:'Code',
     dueDate:'2023-16-7'
