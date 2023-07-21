@@ -19,25 +19,29 @@ function renderTodoList() {
 let todoListHTML='';
 /* The code block is a part of the `renderTodoList()` function. It is responsible for iterating over
 the `todoList` array and generating HTML code for each todo item. */
+
+/* The `todoList.forEach(function(todoObject,index) {` is a loop that iterates over each item in the
+`todoList` array. It takes a callback function as an argument, which is executed for each item in
+the array. */
+todoList.forEach(function(todoObject,index) {
     
-for (let i = 0; i < todoList.length; i++) {
-    const todoObject = todoList[i];
     const {name, dueDate} = todoObject;
     
     const html = `
         <div>${name}</div>				
         <div>${dueDate}</div>				
         <button onclick="
-            todoList.splice(${i}, 1);
-            renderTodoList()
-            saveToStorage();
+            todoList.splice(${index}, 1);
+            renderTodoList() 
+            saveToStorage();           		
             " class="delete-todo-button">Delete</button>
                             
     `;
     //Removing the elements on clicking the delete button by using .splice() method
     todoListHTML+=html
     
-}
+});
+
 
 document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
